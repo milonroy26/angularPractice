@@ -1,0 +1,87 @@
+<p>test works!</p>
+
+<h2> Hello {{user}} </h2>
+<h2> Length: {{user.length}} </h2>
+<h2> {{getUser()}} </h2>
+<h2>Website Url: {{url}} </h2>
+
+
+<!--  Property Binding -->
+<input [id]="myId" type="text" value="Jastin"><br><br>
+<input [disabled]="isdasebled" type="text" value="boolean">
+
+<!-- class binding -->
+<h2 [class]="redColor">This is a read color</h2>
+<h2 [class]="orangeColor" >This is a orange Color</h2>
+<h2 [class]="specialText" >This is a Special Color</h2>
+<!-- boolian -->
+<h2 [class.red-color]="hasEror" >Boolian data text</h2>
+<!-- condition bess multi class binding -->
+<h2 [ngClass]="multiClass" >Multipol Class binding</h2>
+
+<!-- style binding -->
+<h2 [style.color]="'hotpink'" >inline style binding</h2>
+<h2 [style.color]="highlishtColor">Style binding</h2>
+<h2 [style.color]="hasEror ? 'red' : 'navy' ">Condetion bess Style</h2>
+<h2 [ngStyle]="multiStyle" >Multi style</h2>
+
+<!-- event binding -->
+<button (click)="onClick()">Submit</button> <br>
+{{mesage}} <br>
+<button (click)="mesage = 'Hi Milon' " >Who Is</button><br><br>
+
+<!-- Refernce variable -->
+<input #myInput type="text"><br><br>
+<button (click)="loogMessage(myInput.value)" >Go</button><br> <br>
+
+<!-- two way data binding -->
+<input type="text" [(ngModel)]="userName" >
+<h3>Information: {{userName}} </h3>
+<!-- tow way data binding and json data print -->
+<div style="background-color: gray; padding: 10px;">
+    <div [ngStyle]="divStyle">
+        <input [(ngModel)]="email" placeholder="Type your Email:" type="email" name="" id=""><br><br>
+
+        <input [(ngModel)]="password" placeholder="Type your Password:" type="password" name="" id="">
+    </div>
+    <h3>Email: {{email}} </h3>
+    <h3>Password: {{password}} </h3>
+    <button (click)="procces()">Submit Data</button>
+</div>
+
+<!--  ngIf Directive -->
+<h2 *ngIf="displayName; else elseBolock ">Codevolution</h2>
+<!-- ng template -->
+<ng-template #elseBolock>
+    <h2>display none</h2>
+</ng-template>
+<!-- next -->
+<div *ngIf="displayName; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+    <h2>Wellcome Codevolution</h2>
+</ng-template>
+<ng-template #elseBlock>
+    <h2>false Codevolution</h2>
+</ng-template>
+
+<!-- ngSwitch Directive -->
+<div [ngSwitch]="color">
+    <div *ngSwitchCase=" 'red' ">This is a read Color</div>
+    <div *ngSwitchCase=" 'blue' ">This is a blue Color</div>
+    <div *ngSwitchCase=" 'navy' ">This is a navy Color</div>
+    <div *ngSwitchDefault>Pick agin</div>
+</div>
+
+<!-- ngFor Directive -->
+<div *ngFor="let student of students; index as i">
+    <h2> {{i}} {{student}} </h2>
+</div>
+<div *ngFor="let student of students; odd as o">
+    <h3> {{o}} {{student}} </h3>
+</div>
+<!-- next ngFor -->
+<ul  *ngFor="let item of listItem">
+    <li> {{item}} </li>
+</ul>
+
+<!--  Component Interaction -->
